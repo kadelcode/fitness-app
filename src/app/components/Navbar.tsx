@@ -11,7 +11,7 @@ export default function Navbar() {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <header className="w-full fixed top-0 bg-white shadow-sm">
+        <header className="w-full z-50 fixed top-0 bg-white shadow-sm">
             <div className="max-w-7xl z-50 bg-white mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link onClick={() => setIsOpen(false)} href="/" className="text-2xl font-bold text-gray-800">
