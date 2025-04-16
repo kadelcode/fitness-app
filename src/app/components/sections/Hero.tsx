@@ -14,7 +14,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             >
-                Transform Your Body. Track Your Progress.
+                Transform <span className="text-lime-500">Your Body</span>. Track Your Progress.
             </motion.h1>
             <motion.p
             className="text-lg md:text-xl mb-6 max-w-2xl mx-auto"
@@ -22,7 +22,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             >
-                Your all-in-one fitness companion for workoouts, progress tracking, and motivation.
+                Your all-in-one fitness companion for workouts, progress tracking, and motivation.
             </motion.p>
 
             <motion.div
@@ -31,7 +31,7 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
             >
                 <Link href="/auth/register">
-                    <Button size="lg" className="text-lg px-8 py-6">
+                    <Button size="lg" className="text-lg px-8 py-6 bg-cyan-500">
                         Get Started
                     </Button>
                 </Link>
