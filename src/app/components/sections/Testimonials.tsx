@@ -7,7 +7,7 @@ const testimonials = [
     {
         name: "Emily R.",
         avatar: "/avatars/uifaces-a1.jpg",
-        quote: "ForceFit helped me stay on track with my workouts! I've never felt better.",
+        quote: "BoomFit helped me stay on track with my workouts! I've never felt better.",
     },
     {
         name: "James T.",

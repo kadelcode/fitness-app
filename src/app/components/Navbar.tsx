@@ -77,7 +77,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Toggle */}
                 <button onClick={toggleMenu} className="md:hidden cursor-pointer">
-                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
                 </button>
             </div>
 
