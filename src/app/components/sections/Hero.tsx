@@ -17,7 +17,7 @@ export default function Hero() {
                 Transform <span className="text-lime-500">Your Body</span>. Track Your Progress.
             </motion.h1>
             <motion.p
-            className="text-lg md:text-xl mb-6 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 md:text-xl mb-6 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -44,8 +44,8 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             >
                 <Image
-                src="/images/fitness-hero.jpeg"
-                alt="Fitness Hero"
+                src="/images/fitness-model.jpeg"
+                alt="Fitness Model"
                 width={700}
                 height={400}
                 priority
