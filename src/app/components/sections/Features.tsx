@@ -35,7 +35,7 @@ export default function Features() {
             </motion.h2>
 
             <motion.div
-              className="p-6 rounded-2xl grid md:grid-cols-3 gap-8 text-left shadow-md bg-white border hover:shadow-xl transition-all"
+              className="p-6 rounded-2xl grid md:grid-cols-3 gap-8 text-left shadow-md bg-white border hover:shadow-xl"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}

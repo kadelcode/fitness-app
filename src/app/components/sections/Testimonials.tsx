@@ -38,7 +38,7 @@ export default function Testimonials() {
                     {testimonials.map((t, i) => (
                         <motion.div
                           key={i}
-                          className="bg-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+                          className="bg-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md"
                           initial={{ opacity: 0, y: 40 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: i * 0.2 }}
