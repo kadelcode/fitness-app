@@ -34,7 +34,7 @@ export default function Navbar() {
                 >
                     <div className="flex justify-center items-center">
                         <FaDumbbell className="block text-lime-500" size={30} /> 
-                        <span>ForceFit</span>
+                        <span>B<span className="text-lime-500">oo</span>mFit</span>
                     </div>
                 </Link>
 
