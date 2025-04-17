@@ -54,7 +54,7 @@ export default function Testimonials() {
                                 />
                                 <span className="font-semibold">{t.name}</span>
                             </div>
-                            <p className="text-gray-700 italic">"{t.quote}"</p>
+                            <p className="text-gray-700 italic">&#34;{t.quote}&#34;</p>
                         </motion.div>
                     ))}
                 </div>
