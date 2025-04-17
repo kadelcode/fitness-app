@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
     return (
-        <section id="hero" className="w-full py-15 md:py-24 px-6 text-center bg-gradient-to-b from-gray-100 to-white scroll-mt-24">
+        <section className="w-full py-30 md:py-40 px-6 text-center bg-gradient-to-b from-gray-100 to-white scroll-mt-24">
             <motion.h1
             className="text-4xl md:text-6xl font-bold mb-4"
             initial={{ opacity: 0, y: 40 }}

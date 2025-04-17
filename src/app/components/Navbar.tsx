@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { FaDumbbell } from "react-icons/fa";
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -24,7 +25,7 @@ export default function Navbar() {
     }
 
     return (
-        <header className="w-full z-50 sticky top-0 bg-white shadow-sm">
+        <header className="w-full z-50 fixed top-0 bg-white shadow-sm">
             <div className="max-w-7xl z-50 bg-white mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link 
@@ -39,7 +40,14 @@ export default function Navbar() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex gap-6 items-center text-gray-700 font-medium">
-                    <Link href="#features">Features</Link>
+                    <ScrollLink 
+                      to="features"
+                      smooth={true}
+                      duration={500}
+                      offset={-80}
+                    >
+                        Features
+                    </ScrollLink>
                     <Link href="#plans">Plans</Link>
                     <Link href="#testimonials">Testimonials</Link>
                     <Link href="/auth/login">
@@ -65,7 +73,7 @@ export default function Navbar() {
             />
 
             {/* Mobile Menu */}
-            <div className={`fixed w-full md:hidden z-50 flex flex-col items-center justify-center bg-white border-t px-6 py-4 space-y-4 transform transition-transform duration-300 ${
+            <div className={`w-full absolute md:hidden z-50 flex flex-col items-center justify-center bg-white border-t px-6 py-4 space-y-4 transform transition-transform duration-300 ${
                 isOpen ? "translate-x-0" : "translate-x-full"
                 }`}>
                 <Link href="#features m-0" onClick={toggleMenu}>Features</Link>
