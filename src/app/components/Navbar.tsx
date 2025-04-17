@@ -25,7 +25,7 @@ export default function Navbar() {
     }
 
     return (
-        <header className="w-full z-50 fixed top-0 bg-white shadow-sm">
+        <nav className="w-full z-50 fixed top-0 bg-white shadow-sm">
             <div className="max-w-7xl z-50 bg-white mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link 
@@ -54,7 +54,7 @@ export default function Navbar() {
                         <Button variant="outline" className="w-full cursor-pointer hover:bg-lime-200">Login</Button>
                     </Link>
                     <Link href="/auth/register">
-                        <Button className="bg-gray-900 hover:bg-gray-800 cursor-pointer">Join Now</Button>
+                        <Button className="bg-gray-900 hover:bg-gray-800 cursor-pointer text-white">Join Now</Button>
                     </Link>
                 </nav>
 
@@ -83,9 +83,9 @@ export default function Navbar() {
                     <Button variant="outline" className="w-full cursor-pointer hover:bg-lime-200">Login</Button>
                 </Link>
                 <Link href="/auth/register" onClick={toggleMenu}>
-                    <Button className="bg-gray-900 hover:bg-gray-800 cursor-pointer">Join Now</Button>
+                    <Button className="bg-gray-900 hover:bg-gray-800 cursor-pointer text-white">Join Now</Button>
                 </Link>
             </div>
-        </header>
+        </nav>
     )
 }
