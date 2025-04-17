@@ -43,7 +43,7 @@ export default function Features() {
                 {features.map((feature, index) => (
                     <motion.div
                       key={index}
-                      className="p-6 rounded-2xl shadow-md bg-white border hover:shadow-xl transition-all"
+                      className="p-6 rounded-2xl shadow-md bg-white border hover:shadow-xl"
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.2 }}
