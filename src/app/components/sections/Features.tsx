@@ -24,7 +24,7 @@ const features = [
 
 export default function Features() {
     return (
-        <section className="w-full py-16 px-6 max-w-6xl mx-auto">
+        <section id="features" className="w-full py-16 px-6 max-w-6xl mx-auto scroll-mt-10">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8"
               initial={{ opacity: 0, y: 40 }}

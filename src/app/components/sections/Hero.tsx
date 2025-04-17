@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
     return (
-        <section className="w-full py-24 px-6 text-center bg-gradient-to-b from-gray-100 to-white">
+        <section id="hero" className="w-full py-15 md:py-24 px-6 text-center bg-gradient-to-b from-gray-100 to-white scroll-mt-24">
             <motion.h1
             className="text-4xl md:text-6xl font-bold mb-4"
             initial={{ opacity: 0, y: 40 }}
@@ -31,7 +31,7 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
             >
                 <Link href="/auth/register">
-                    <Button size="lg" className="text-lg px-8 py-6 bg-cyan-500">
+                    <Button size="lg" className="text-lg px-8 py-6 bg-lime-300 text-gray-900">
                         Get Started
                     </Button>
                 </Link>
@@ -48,6 +48,7 @@ export default function Hero() {
                 alt="Fitness Hero"
                 width={700}
                 height={400}
+                priority
                 className="mx-auto rounded-xl shadow-lg"
                 />
             </motion.div>
