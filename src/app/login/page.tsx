@@ -46,7 +46,7 @@ export default function LoginPage() {
     return (
         <section className="bg-lime-300 flex items-center justify-center min-h-screen">
             <div className="w-sm md:w-md px-3 mx-auto">
-                <Card>
+                <Card className="bg-white">
                     <CardContent className="px-6">
                         <h2 className="text-2xl font-bold mb-4">Login</h2>
                         <form onSubmit={handleSubmit} className="space-y-4">
