@@ -70,7 +70,7 @@ export default function Navbar() {
                     <Link href="/auth/login">
                         <Button variant="outline" className="w-full cursor-pointer hover:bg-lime-200">Login</Button>
                     </Link>
-                    <Link href="/auth/register">
+                    <Link href="/signup">
                         <Button className="bg-gray-900 hover:bg-gray-800 cursor-pointer text-white">Join Now</Button>
                     </Link>
                 </nav>
