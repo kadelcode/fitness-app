@@ -67,7 +67,7 @@ export default function Navbar() {
                         Testimonials
                     </ScrollLink>
                     
-                    <Link href="/auth/login">
+                    <Link href="/login">
                         <Button variant="outline" className="w-full cursor-pointer hover:bg-lime-200">Login</Button>
                     </Link>
                     <Link href="/signup">
@@ -122,10 +122,10 @@ export default function Navbar() {
                 >
                     Testimonials
                 </ScrollLink>
-                <Link href="/auth/login" onClick={toggleMenu}>
+                <Link href="/login" onClick={toggleMenu}>
                     <Button variant="outline" className="w-full cursor-pointer hover:bg-lime-200">Login</Button>
                 </Link>
-                <Link href="/auth/register" onClick={toggleMenu}>
+                <Link href="/signup" onClick={toggleMenu}>
                     <Button className="bg-gray-900 hover:bg-gray-800 cursor-pointer text-white">Join Now</Button>
                 </Link>
             </div>
