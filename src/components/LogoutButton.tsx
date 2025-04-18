@@ -10,6 +10,7 @@ export default function LogoutButton() {
             await signOut({ callbackUrl: "/login" });
             toast.success("Logged out successfully!");
         } catch (error) {
+            console.log(error);
             toast.error("Failed to log out.");
         }
     };
