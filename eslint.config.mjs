@@ -14,7 +14,7 @@ const eslintConfig = [
 
   // Suppress rules for all generated Prisma JS files
   {
-    files: ["src/generated/prisma/**/*.js"],
+    files: ["src/generated/prisma/**/*.js", "src/generated/prisma/**/*.ts"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
       "@typescript-eslint/no-var-requires": "off",
