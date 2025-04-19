@@ -19,6 +19,7 @@ const eslintConfig = [
       "@typescript-eslint/no-require-imports": "off",
       "@typescript-eslint/no-unused-vars": "off", // Suppresses "assigned a value but never used"
       "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/no-this-alias": "off", // Suppress this aliasing warning
     },
   },
 
