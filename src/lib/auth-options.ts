@@ -1,29 +1,46 @@
-// lib/auth-options.ts
+// Import the NextAuthOptions type from next-auth
 import type { NextAuthOptions } from "next-auth"
+
+// Import the CredentialsProvider for handling custom authentication
 import CredentialsProvider from "next-auth/providers/credentials"
+
+// Import the Prisma client for database operations
 import { prisma } from "@/lib/prisma"
+
+// Import the compare function from bcrypt for password verification
 import { compare } from "bcrypt"
 
+// Define the authentication options for NextAuth
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
+      // Define the name of the provider
       name: "Credentials",
+
+      // Specify the credentials required for authentication
       credentials: {
-        email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" },
+        email: { label: "Email", type: "text" }, // Email field with label and type
+        password: { label: "Password", type: "password" }, // Password field with label and type
       },
+
+      // Authorize function to handle user authentication
       async authorize(credentials) {
+        // Check if email or password is missing
         if (!credentials?.email || !credentials.password) return null
 
+        // Find the user in the database by email
         const user = await prisma.user.findUnique({
           where: { email: credentials.email },
         })
 
+        // If user not found, return null
         if (!user) return null
 
+        // Compare the provided password with the hashed password in the database
         const isValid = await compare(credentials.password, user.password)
-        if (!isValid) return null
+        if (!isValid) return null; // If password is invalid, return null
 
+        // Return user information if authentication is successful
         return {
           id: user.id,
           email: user.email,
@@ -32,11 +49,16 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  
   session: {
-    strategy: "jwt",
+    strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
+    maxAge: 10
   },
+
   pages: {
-    signIn: "/login",
+    signIn: "/login", // Custom sign-in page URL
   },
+
+  // Secret key for encryption, retrieved from environment variables
   secret: process.env.NEXTAUTH_SECRET,
 }
