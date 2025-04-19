@@ -17,6 +17,7 @@ const eslintConfig = [
     files: ["src/generated/prisma/**/*.js"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
+      "no-unused-vars": "off", // Suppresses "assigned a value but never used"
     },
   }
 ];
