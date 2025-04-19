@@ -14,7 +14,7 @@ generator client {
 
 datasource db {
   provider = "mongodb" // Specifies the database provider. Here, it's MongoDB.
-  url      = env("DATABASE_URL") / The database URL, which is retrieved from an environment from an environment variable named "DATABASE_URL".
+  url      = env("DATABASE_URL") // The database URL, which is retrieved from an environment from an environment variable named "DATABASE_URL".
 }
 
 model User {
