@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  // Specifies the client generator to use. In this case, it's the Prisma Client for JavaScipt/TypeScript.
+  provider = "prisma-client-js"
+
+  // The output directory where the generated client will be placed.
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb" // Specifies the database provider. Here, it's MongoDB.
+  url      = env("DATABASE_URL") / The database URL, which is retrieved from an environment from an environment variable named "DATABASE_URL".
+}
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId // Defines the "id" field as the primary key, usnig MongoDB's ObjectId type.
+  name      String?  // An optional field fo the user's name
+  email     String   @unique // A unique field for the user's email address. 
+  password  String   // A field for the user's password
+  image     String?  // An optional field for the user's image URL. 
+  createdAt DateTime @default(now()) // A field for the timestamp when the user was created, with a default value of the current data and time.
+}
