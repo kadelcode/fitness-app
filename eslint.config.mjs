@@ -14,7 +14,7 @@ const eslintConfig = [
 
   // Suppress rules for all generated Prisma JS files
   {
-    files: ["src/generated/prisma/**/*.js", "src/generated/prisma/**/*.ts"],
+    files: ["src/generated/prisma/**/*.{js,ts,d.ts}"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
       "@typescript-eslint/no-var-requires": "off",
@@ -25,6 +25,9 @@ const eslintConfig = [
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-unnecessary-type-constraint": "off",
+      "@typescript-eslint/no-unsafe-function-type": "off",
+      "@typescript-eslint/no-wrapper-object-types": "off",
       "no-var": "off",
       "no-undef": "off",
       "no-empty": "off",
@@ -33,6 +36,7 @@ const eslintConfig = [
       "no-unsafe-finally": "off",
     },
   },
+  
 
   // Suppress "unused vars" for type-only files
   {
