@@ -52,7 +52,7 @@ export const authOptions: NextAuthOptions = {
   
   session: {
     strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
-    maxAge: 10
+    maxAge: 24 * 60 * 60, // Session expiration time in seconds (e.g., 24 hours)
   },
 
   pages: {
