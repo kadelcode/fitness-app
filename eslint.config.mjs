@@ -17,9 +17,18 @@ const eslintConfig = [
     files: ["src/generated/prisma/**/*.js"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
-      "@typescript-eslint/no-unused-vars": "off", // Suppresses "assigned a value but never used"
+      "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-unused-expressions": "off",
-      "@typescript-eslint/no-this-alias": "off", // Suppress this aliasing warning
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/ban-types": "off",
+      "no-var": "off",
+      "no-undef": "off",
+      "no-empty": "off",
+      "no-constant-condition": "off",
+      "prefer-const": "off",
+      "no-unsafe-finally": "off",
     },
   },
 
