@@ -84,6 +84,7 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
                           src={session?.user?.avatar || '/avatars/avataaars.png' }
                           alt="Avatar"
                           className="w-8 h-8 rounded-full object-cover"
+                          unoptimized
                         />
                         <span className="text-sm font-medium texxt-gray-700 truncate">
                             {session?.user?.name || 'User'}
