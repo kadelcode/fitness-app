@@ -57,7 +57,7 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
             {/* Avatar Image */}
             <div className="relative" ref={menuRef}> {/* Container for the avatar and dropdown menu */}
                 <Image
-                  src={session?.user?.avatar! || '/avatars/avataaars.png'} // Avatar image source
+                  src={session?.user?.avatar || '/avatars/avataaars.png'} // Avatar image source
                   alt="User Avatar" // Accessibility text
                   className="w-8 h-8 rounded-full cursor-pointer border hover:scale-105 transition" // Styling classes
                   onClick={() => setOpen((prev) => !prev)} // Toggle the menu open/close state
