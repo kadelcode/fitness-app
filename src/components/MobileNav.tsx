@@ -61,6 +61,7 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
                   alt="User Avatar" // Accessibility text
                   className="w-8 h-8 rounded-full cursor-pointer border hover:scale-105 transition" // Styling classes
                   onClick={() => setOpen((prev) => !prev)} // Toggle the menu open/close state
+                  unoptimized
                 />
 
                 {open && ( // Conditionally render the dropdown menu if open is true
