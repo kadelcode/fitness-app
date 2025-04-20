@@ -60,7 +60,7 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
                 <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse" />
                 : 
                 <Image
-                  src={session?.user?.avatar || '/avatars/avataaars.png'} // Avatar image source
+                  src={session?.user?.avatar ?? '/avatars/avataaars.png'} // Avatar image source
                   alt="User Avatar" // Accessibility text
                   className="w-8 h-8 rounded-full cursor-pointer border hover:scale-105 transition" // Styling classes
                   onClick={() => setOpen((prev) => !prev)} // Toggle the menu open/close state
