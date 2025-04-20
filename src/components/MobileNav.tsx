@@ -16,7 +16,7 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
     const menuRef = useRef<HTMLDivElement>(null)
 
     // Extract the user's name from the session data or default to 'User'
-    const name = session?.user?.name || 'User'
+    /*const name = session?.user?.name || 'User'
 
     // Generate initials from the user's name
     const initials = name
@@ -25,9 +25,10 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
       .join('') // Join the letters together
       .toUpperCase() // Convert to uppercase
       .slice(0, 2) // Take only the first two initials
+    */
 
     // Generate the avatar URl using the initials
-    const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=0D8ABC&color=fff&rounded=true&size=128`
+    // const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=0D8ABC&color=fff&rounded=true&size=128`
 
     // useEffect to handle clicks outside the menu to close it
     useEffect(() => {
@@ -55,7 +56,7 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
             {/* Avatar Image */}
             <div className="relative" ref={menuRef}> {/* Container for the avatar and dropdown menu */}
                 <img
-                  src={avatarUrl} // Avatar image source
+                  src={session?.user?.avatar!} // Avatar image source
                   alt="User Avatar" // Accessibility text
                   className="w-8 h-8 rounded-full cursor-pointer border hover:scale-105 transition" // Styling classes
                   onClick={() => setOpen((prev) => !prev)} // Toggle the menu open/close state
