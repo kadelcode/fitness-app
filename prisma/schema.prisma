@@ -22,6 +22,7 @@ model User {
   name      String?  // An optional field fo the user's name
   email     String   @unique // A unique field for the user's email address. 
   password  String   // A field for the user's password
-  image     String?  // An optional field for the user's image URL. 
+  avatar     String?  // An optional field for the user's image URL. 
   createdAt DateTime @default(now()) // A field for the timestamp when the user was created, with a default value of the current data and time.
+  updatedAt DateTime @updatedAt // A field for the timestamp when the user was updated
 }
