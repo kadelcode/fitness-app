@@ -35,11 +35,6 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const router = useRouter();
 
-    const name = session?.user.name || 'User'
-    const initials = name.split(' ').map(n => n[0]).join('').slice(0,2)
-
-    const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=0D8ABC&color=fff&size=128`
-
     const toggleDropdown = () => setDropdownOpen(prev => !prev)
 
     return (
@@ -85,7 +80,7 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
                       className="flex items-center gap-2 p-2 w-full rounded hover:bg-gray-100"
                     >
                         <img
-                          src={session?.user?.image || avatarUrl }
+                          src={session?.user?.avatar || '/avatars/avataaars.png' }
                           alt="Avatar"
                           className="w-8 h-8 rounded-full object-cover"
                         />
