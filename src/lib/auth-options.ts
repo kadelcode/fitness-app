@@ -49,6 +49,21 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+
+  callbacks: {
+    async session({ session, token }) {
+      const dbUser = await prisma.user.findUnique({
+        where: { email: session.user?.email! },
+      })
+
+      if (dbUser) {
+        session.user.id = dbUser.id
+        session.user.avatar = dbUser.avatar;
+      }
+
+      return session;
+    }
+  },
   
   session: {
     strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
