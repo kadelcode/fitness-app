@@ -22,12 +22,24 @@ export async function POST(req: Request) {
     // Hash the user's password for security
     const hashedPassword = await hash(password, 10);
 
+    // Generate initials from name
+    const initials = name
+      ?.split(' ')
+      .map((n: String) => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
+
+    const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(initials || 'U')}&background=0D8ABC&color=fff&rounded=true&size=128`
+
+
     // Create a new user in the database with the hashed password
     const user = await prisma.user.create({
         data: {
             name,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            avatar: avatarUrl
         }
     })
 
