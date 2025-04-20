@@ -25,7 +25,7 @@ export default async function DashboardPage() {
   return (
     <div className="p-6 space-y-6">
       {/* Welcome Banner */}
-      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-2xl shadow-md">
+      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 bg-green-400 text-white p-6 rounded-2xl shadow-md">
         <h1 className="text-2xl font-bold">Welcome back {session?.user.name || "User"}</h1>
         <p className="text-sm mt-1">Stay consistent. You&apos;re doing great!</p>
       </div>

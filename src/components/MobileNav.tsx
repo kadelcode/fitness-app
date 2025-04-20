@@ -43,7 +43,7 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
     }, [])
 
     return (
-        <div className="flex w-full justify-between items-center">
+        <div className="flex sticky w-full justify-between items-center">
             {/* Menu Button */}
             <button
                 className="md:hidden text-gray-700 cursor-pointer" // Hide on medium and larger screens
