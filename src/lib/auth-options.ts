@@ -53,7 +53,7 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session }) {
       const dbUser = await prisma.user.findUnique({
-        where: { email: session.user?.email! },
+        where: { email: session.user?.email },
       })
 
       if (dbUser) {

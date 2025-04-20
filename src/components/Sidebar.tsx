@@ -17,6 +17,7 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 
 const navItems = [
@@ -79,7 +80,7 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
                       onClick={toggleDropdown}
                       className="flex items-center gap-2 p-2 w-full rounded hover:bg-gray-100"
                     >
-                        <img
+                        <Image
                           src={session?.user?.avatar || '/avatars/avataaars.png' }
                           alt="Avatar"
                           className="w-8 h-8 rounded-full object-cover"
