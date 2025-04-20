@@ -32,7 +32,7 @@ const navItems = [
 ]
 
 export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () => void }) {
-    const { data: session } = useSession()
+    const { data: session, status } = useSession()
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const router = useRouter();
 
@@ -80,15 +80,24 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
                       onClick={toggleDropdown}
                       className="flex items-center gap-2 p-2 w-full rounded hover:bg-gray-100"
                     >
+                        { status === "loading" ? (
+                            <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse" />
+                        ) : (
+                        <>
                         <Image
+                          key={session?.user?.avatar}
                           src={session?.user?.avatar || '/avatars/avataaars.png' }
                           alt="Avatar"
                           className="w-8 h-8 rounded-full object-cover"
                           unoptimized
+                          width={32}
+                          height={32}
                         />
                         <span className="text-sm font-medium texxt-gray-700 truncate">
                             {session?.user?.name || 'User'}
                         </span>
+                        </>
+                        )}
                     </button>
 
                     <AnimatePresence>
