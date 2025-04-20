@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     // Generate initials from name
     const initials = name
       ?.split(' ')
-      .map((n: String) => n[0])
+      .map((n: string) => n[0])
       .join('')
       .toUpperCase()
       .slice(0, 2)

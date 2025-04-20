@@ -3,6 +3,7 @@ import { Menu } from "lucide-react" // Icon component for the menu
 import { useSession, signOut } from "next-auth/react" // Hooks for session management
 import { useState, useRef, useEffect } from 'react' // React hooks for state management and side effects
 import Link from 'next/link' // Component for client-side navigation
+import Image from "next/image"
 
 export default function MobileNav( { onOpen }: { onOpen: () => void }) {
 
@@ -55,8 +56,8 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
 
             {/* Avatar Image */}
             <div className="relative" ref={menuRef}> {/* Container for the avatar and dropdown menu */}
-                <img
-                  src={session?.user?.avatar!} // Avatar image source
+                <Image
+                  src={session?.user?.avatar! || '/avatars/avataaars.png'} // Avatar image source
                   alt="User Avatar" // Accessibility text
                   className="w-8 h-8 rounded-full cursor-pointer border hover:scale-105 transition" // Styling classes
                   onClick={() => setOpen((prev) => !prev)} // Toggle the menu open/close state
