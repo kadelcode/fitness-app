@@ -56,16 +56,18 @@ export default function MobileNav( { onOpen }: { onOpen: () => void }) {
 
             {/* Avatar Image */}
             <div className="relative" ref={menuRef}> {/* Container for the avatar and dropdown menu */}
-                {(status === "loading") ?
-                <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse" />
-                : 
+                {status === "loading" ? (
+                    <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse" />
+                ) : (
                 <Image
-                  src={session?.user?.avatar ?? '/avatars/avataaars.png'} // Avatar image source
+                  key={session?.user?.avatar}
+                  src={session?.user?.avatar || '/avatars/avataaars.png'} // Avatar image source
                   alt="User Avatar" // Accessibility text
                   className="w-8 h-8 rounded-full cursor-pointer border hover:scale-105 transition" // Styling classes
                   onClick={() => setOpen((prev) => !prev)} // Toggle the menu open/close state
                   unoptimized
-                />}
+                />
+                )}
 
                 {open && ( // Conditionally render the dropdown menu if open is true
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50">
