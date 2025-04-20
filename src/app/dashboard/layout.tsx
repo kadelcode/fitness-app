@@ -14,7 +14,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div className='flex-1 flex flex-col'>
                 <header className='flex items-center justify-between px-4 py-3 bg-white shadow-md md:hidden'>
                     <MobileNav onOpen={() => setSidebarOpen(true)} />
-                    <h1>B<span className='text-lime-500'>oo</span>Fit</h1>
                 </header>
                 <main className='flex-1 p-6 overflow-y-auto bg-gray-50'>
                     {children}
