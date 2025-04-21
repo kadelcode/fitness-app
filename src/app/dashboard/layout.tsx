@@ -1,24 +1,36 @@
-"use client"
+// Import the getServerSession function from the next-auth library.
+// This function is used to retrieve the session information on the server side.
+import { getServerSession } from 'next-auth'
 
-import { useState } from 'react'
-import Sidebar from "@/components/Sidebar"
-import MobileNav from '@/components/MobileNav'
+// Import the authentication options configured for your application
+// These options typically include settings for authentication providers, callbacks, etc.
+import { authOptions } from '@/lib/auth-options'
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+// Import the redirect function from the next/navigation module.
+// This function is used to redirect the user to a different page.
+import { redirect } from 'next/navigation'
 
+// Import the DashboardShell component, which is likely a layout component
+// that wraps the content of the dashboard with a consistent shell or structure
+import DashboardShell from '@/components/DashboardShell';
+
+
+// Define the DashboardLayout component as an asynchronous function.
+// This component takes 'children' as a prop, which represents the content to be rendered within the dashboard layout.
+export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+    // Retrieve the session information using getServerSession and the authOptions.
+    // This will check if the use is authenticated.
+    const session = await getServerSession(authOptions);
+
+    // If there is no session (i.e., the user is not authenticated),
+    // redirect the user to the login page.
+    if (!session) {
+        redirect("/login");
+    }
+
+    // If the user is authenticated, render the DashboardShell component
+    // with the 'children' content passed to it.
     return (
-        <div className='flex h-screen'>
-            <Sidebar isOpen={sidebarOpen} close={() => setSidebarOpen(false)} />
-
-            <div className='flex-1 flex flex-col'>
-                <header className='flex items-center justify-between px-4 py-3 bg-white shadow-md md:hidden'>
-                    <MobileNav onOpen={() => setSidebarOpen(true)} />
-                </header>
-                <main className='flex-1 p-6 overflow-y-auto bg-gray-50'>
-                    {children}
-                </main>
-            </div>
-        </div>
+        <DashboardShell>{children}</DashboardShell>
     )
 }
