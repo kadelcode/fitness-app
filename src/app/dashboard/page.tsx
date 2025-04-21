@@ -67,7 +67,7 @@ export default async function DashboardPage() {
               <p className="text-xl font-medium">Full Body HIIT</p>
               <p className="text-gray-500">45 mins | Strength | Intermediate</p>
             </div>
-            <Button className="mt-4 md:mt-0">Start Workout</Button>
+            <Button className="mt-4 md:mt-0 bg-gray-900 text-white">Start Workout</Button>
           </div>
         </CardContent>
       </Card>
@@ -81,7 +81,7 @@ export default async function DashboardPage() {
               <div key={item.name}>
                 <p className="font-medium">{item.name}</p>
                 <p>{item.value} / {item.goal}</p>
-                <Progress value={(item.value / item.goal) * 100} />
+                <Progress className="bg-gray-300" value={(item.value / item.goal) * 100} />
               </div>
             ))}
           </div>
