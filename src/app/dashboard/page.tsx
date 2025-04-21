@@ -81,7 +81,7 @@ export default async function DashboardPage() {
               <div key={item.name}>
                 <p className="font-medium">{item.name}</p>
                 <p>{item.value} / {item.goal}</p>
-                <Progress className="bg-gray-300" value={(item.value / item.goal) * 100} />
+                <Progress className="bg-gray-300 z-10" value={(item.value / item.goal) * 100} />
               </div>
             ))}
           </div>
