@@ -93,7 +93,7 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
                           width={32}
                           height={32}
                         />
-                        <span className="text-sm font-medium texxt-gray-700 truncate">
+                        <span className="text-sm font-medium text-gray-700 truncate">
                             {session?.user?.name || 'User'}
                         </span>
                         </>

@@ -75,7 +75,7 @@ export default function MobileNav({ onOpen }: { onOpen: () => void }) {
                 {open && ( // Conditionally render the dropdown menu if open is true
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50">
                         <Link
-                          href="/profile" // Navigation link to the profile page
+                          href="/dashboard/profile" // Navigation link to the profile page
                           className="block px-4 py-2 text-sm hover:bg-gray-100" // Styling classes
                           onClick={() => setOpen(false)} // close the menu when clicked
                         >
