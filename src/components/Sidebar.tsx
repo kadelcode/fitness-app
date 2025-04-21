@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { 
     HomeIcon, 
     ActivityIcon, 
@@ -37,6 +38,7 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
     const router = useRouter();
 
     const toggleDropdown = () => setDropdownOpen(prev => !prev)
+    const pathname = usePathname() // Get the current path
 
     return (
         <>
@@ -62,14 +64,25 @@ export default function Sidebar({ isOpen, close }: { isOpen: boolean; close: () 
                     </h2>
                     <nav>
                         <ul className="space-y-4">
-                            {navItems.map(({name, icon: Icon, href }) => (
+                            {navItems.map(({name, icon: Icon, href }) => {
+                                const isActive = pathname === href;
+
+                                return (
                                 <li key={name}>
-                                    <Link href={href} className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
+                                    <Link 
+                                      href={href} 
+                                      className={`
+                                        flex items-center space-x-2
+                                        ${isActive ? 'text-green-400 font-semibold' :
+                                            'text-gray-700 hover:text-gray-500'
+                                        }
+                                      `}
+                                    >
                                         <Icon className="w-5 h-5" />
                                         <span>{name}</span>
                                     </Link>
                                 </li>
-                            ))}
+                            )})}
                         </ul>
                     </nav>
                 </div>
