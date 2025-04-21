@@ -1,7 +1,10 @@
-import { authOptions } from "@/lib/auth-options"; // OR use getServerSession
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth-options";
+import WorkoutCharts from "@/components/WorkoutCharts";
 
 type SummaryCardProps = {
   icon: React.ReactNode;
@@ -15,12 +18,25 @@ import {
   ActivityIcon,
 } from "lucide-react"
 
-export default async function DashboardPage() {
-  const session = await getServerSession(authOptions); // await the Promise
+const workoutData = [
+  { day: 'Mon', workouts: 1 },
+  { day: 'Tue', workouts: 0 },
+  { day: 'Wed', workouts: 1 },
+  { day: 'Thu', workouts: 0 },
+  { day: 'Fri', workouts: 1 },
+];
 
-  if (!session) {
-    return redirect("/login");
-  }
+const nutritionData = [
+  { name: 'Calories', value: 1800, goal: 2200 },
+  { name: 'Protein', value: 110, goal: 150 },
+  { name: 'Carbs', value: 200, goal: 250 },
+  { name: 'Fats', value: 70, goal: 80 },
+];
+
+export default async function DashboardPage() {
+
+  // Retrive session information
+  const session = await getServerSession(authOptions);
 
   return (
     <div className="p-6 space-y-6">
@@ -48,6 +64,39 @@ export default async function DashboardPage() {
             value="8,420"
           />
       </div>
+
+      {/* Today's Workout */}
+      <Card>
+        <CardHeader>Today's Workout</CardHeader>
+        <CardContent>
+          <div className="flex flex-col md:flex-row md:items-center justify-between">
+            <div>
+              <p className="text-xl font-medium">Full Body HIIT</p>
+              <p className="text-gray-500">45 mins | Strength | Intermediate</p>
+            </div>
+            <Button className="mt-4 md:mt-0">Start Workout</Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Nutrition Section */}
+      <Card>
+        <CardHeader>Today's Nutrition</CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {nutritionData.map((item) => (
+              <div key={item.name}>
+                <p className="font-medium">{item.name}</p>
+                <p>{item.value} / {item.goal}</p>
+                <Progress value={(item.value / item.goal) * 100} />
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Charts */}
+      <WorkoutCharts />
     </div>
   );
 }
