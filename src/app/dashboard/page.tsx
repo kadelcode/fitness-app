@@ -18,13 +18,6 @@ import {
   ActivityIcon,
 } from "lucide-react"
 
-const workoutData = [
-  { day: 'Mon', workouts: 1 },
-  { day: 'Tue', workouts: 0 },
-  { day: 'Wed', workouts: 1 },
-  { day: 'Thu', workouts: 0 },
-  { day: 'Fri', workouts: 1 },
-];
 
 const nutritionData = [
   { name: 'Calories', value: 1800, goal: 2200 },
@@ -67,7 +60,7 @@ export default async function DashboardPage() {
 
       {/* Today's Workout */}
       <Card>
-        <CardHeader>Today's Workout</CardHeader>
+        <CardHeader>Today&apos;s Workout</CardHeader>
         <CardContent>
           <div className="flex flex-col md:flex-row md:items-center justify-between">
             <div>
@@ -81,7 +74,7 @@ export default async function DashboardPage() {
 
       {/* Nutrition Section */}
       <Card>
-        <CardHeader>Today's Nutrition</CardHeader>
+        <CardHeader>Today&apos;s Nutrition</CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {nutritionData.map((item) => (
