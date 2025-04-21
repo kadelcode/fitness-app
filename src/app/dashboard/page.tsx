@@ -59,7 +59,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* Today's Workout */}
-      <Card>
+      <Card className="shadow-md">
         <CardHeader>Today&apos;s Workout</CardHeader>
         <CardContent>
           <div className="flex flex-col md:flex-row md:items-center justify-between">
@@ -73,7 +73,7 @@ export default async function DashboardPage() {
       </Card>
 
       {/* Nutrition Section */}
-      <Card>
+      <Card className="shadow-md">
         <CardHeader>Today&apos;s Nutrition</CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

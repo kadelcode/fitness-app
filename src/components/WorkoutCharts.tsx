@@ -15,7 +15,7 @@ const workoutData = [
 
 export default function WorkoutCharts() {
     return (
-        <Card>
+        <Card className='shadow-md'>
             <CardHeader>Weekly Workout Overview</CardHeader>
             <CardContent>
                 <ResponsiveContainer width="100%" height={200}>
