@@ -1,10 +1,11 @@
 // Import necessary modules and functions
-import { PrismaClient } from "@/generated/prisma/client"; // Prisma Client for database operations
+// import { PrismaClient } from "@/generated/prisma/client"; // Prisma Client for database operations
+import { prisma } from '@/lib/prisma';
 import { hash } from 'bcrypt'; // bcrypt for password hashing
 import { NextResponse } from "next/server"; // NextResponse for sending HTTP responses
 
 // Initialize Prisma Client
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 // Define the POST request handler
 export async function POST(req: Request) {
