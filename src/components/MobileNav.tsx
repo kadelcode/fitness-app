@@ -1,3 +1,4 @@
+"use client"
 // Import necessary modules and components
 import { Menu } from "lucide-react" // Icon component for the menu
 import { useSession, signOut } from "next-auth/react" // Hooks for session management
@@ -5,7 +6,7 @@ import { useState, useRef, useEffect } from 'react' // React hooks for state man
 import Link from 'next/link' // Component for client-side navigation
 import Image from "next/image"
 
-export default function MobileNav( { onOpen }: { onOpen: () => void }) {
+export default function MobileNav({ onOpen }: { onOpen: () => void }) {
 
     // Get the session data using the useSession hook
     const { data: session, status } = useSession()
