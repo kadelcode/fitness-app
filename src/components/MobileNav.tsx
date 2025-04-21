@@ -44,6 +44,7 @@ export default function MobileNav({ onOpen }: { onOpen: () => void }) {
     }, [])
 
     return (
+        <div>
         <div className="flex sticky w-full justify-between items-center">
             {/* Menu Button */}
             <button
@@ -71,9 +72,11 @@ export default function MobileNav({ onOpen }: { onOpen: () => void }) {
                   height={32}
                 />
                 )}
-
-                {open && ( // Conditionally render the dropdown menu if open is true
-                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50">
+            </div>
+        </div>
+        <div>
+            {open && ( // Conditionally render the dropdown menu if open is true
+                    <div className="absolute right-4 mt-5 w-48 bg-white rounded-lg shadow-lg z-50">
                         <Link
                           href="/dashboard/profile" // Navigation link to the profile page
                           className="block px-4 py-2 text-sm hover:bg-gray-100" // Styling classes
@@ -99,7 +102,7 @@ export default function MobileNav({ onOpen }: { onOpen: () => void }) {
                         </button>
                     </div>
                 )}
-            </div>
+        </div>
         </div>
     )
 }
