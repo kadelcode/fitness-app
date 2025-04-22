@@ -32,7 +32,7 @@ export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="px-2 py-6 space-y-6">
       {/* Welcome Banner */}
       <div className="bg-gradient-to-r from-blue-500 to-indigo-600 bg-green-400 text-white p-6 rounded-2xl shadow-md">
         <h1 className="text-2xl font-bold">Welcome back {session?.user.name || "User"}</h1>
@@ -81,7 +81,7 @@ export default async function DashboardPage() {
               <div key={item.name}>
                 <p className="font-medium">{item.name}</p>
                 <p>{item.value} / {item.goal}</p>
-                <Progress className="bg-gray-300 z-10" value={(item.value / item.goal) * 100} />
+                <Progress className=" bg-gray-300" value={(item.value / item.goal) * 100} />
               </div>
             ))}
           </div>
