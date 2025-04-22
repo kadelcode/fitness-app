@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BoomFit - Fitness Tracker",
+  title: {
+    default: "BoomFit - Fitness Tracker",
+    template: "%s",
+  },
   description: "Your Modern Fitness Companion",
 };
 

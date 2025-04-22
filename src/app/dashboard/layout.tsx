@@ -14,6 +14,14 @@ import { redirect } from 'next/navigation'
 // that wraps the content of the dashboard with a consistent shell or structure
 import DashboardShell from '@/components/DashboardShell';
 
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+  description: "BoomFit User Dashboard",
+};
+
 
 // Define the DashboardLayout component as an asynchronous function.
 // This component takes 'children' as a prop, which represents the content to be rendered within the dashboard layout.
