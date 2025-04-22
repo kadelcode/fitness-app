@@ -74,7 +74,7 @@ export default function MobileNav({ onOpen }: { onOpen: () => void }) {
                 )}
             </div>
         </div>
-        <div>
+        <div  ref={menuRef}>
             {open && ( // Conditionally render the dropdown menu if open is true
                     <div className="absolute right-4 mt-5 w-48 bg-white rounded-lg shadow-lg z-50">
                         <Link
