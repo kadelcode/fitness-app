@@ -2,7 +2,7 @@
 
 A sleek, responsive fitness tracking web app built with **Next.js 13+ (App Router)**, **TailwindCSS**, **ShadCN UI**, and **Prisma ORM**. Track workouts, meals, and progress—all in one place.
 
-![FitTrack Banner](./public/banner.png)
+![Landing Page](./public/boomfit-lp.png)
 
 ---
 
@@ -115,13 +115,13 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 ---
 
 ## 📄 License
-This project is licensed under the [MIT License]().
+This project is licensed under the [MIT License](https://mit-license.org/).
 
 ---
 
 ## 👏 Acknowledgements
 -  [Next.js](https://nextjs.org/)
--  [ShadCN UI]()
+-  [ShadCN UI](https://ui.shadcn.com/)
 -  [Prisma](https://www.prisma.io/)
 -  [Tailwind CSS](https://tailwindcss.com/)
 
